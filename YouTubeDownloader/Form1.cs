@@ -457,16 +457,201 @@ namespace YouTubeDownloader
         //    }
         //}
 
+        //private void DownloadVideo(string url, CancellationToken cancellationToken)
+        //{
+        //    try
+        //    {
+        //        // Create the output path where the video will be saved using the video title
+        //        // The '%(title)s' placeholder will be replaced with the video's title, and '%(ext)s' will get the correct file extension.
+        //        string savePath = Path.Combine(txtSaveTo.Text, "%(title)s.%(ext)s");
+
+        //        // Ensure yt-dlp path is quoted properly
+        //        string ytDlpCommand = $"\"{txtYtdlpExe.Text}\" -o \"{savePath}\" \"{url}\"";
+
+        //        // Check if yt-dlp exists
+        //        if (string.IsNullOrEmpty(txtYtdlpExe.Text) || !File.Exists(txtYtdlpExe.Text))
+        //        {
+        //            Invoke(new Action(() => txtCmd.AppendText("Error: yt-dlp.exe not found!\n")));
+        //            return;
+        //        }
+
+        //        // Ensure cmd.exe can execute it properly
+        //        var startInfo = new ProcessStartInfo
+        //        {
+        //            FileName = "cmd.exe",
+        //            Arguments = $"/c \"{ytDlpCommand}\"",  // Ensure proper quoting for the entire command
+        //            CreateNoWindow = true,
+        //            UseShellExecute = false,
+        //            RedirectStandardOutput = true,
+        //            RedirectStandardError = true
+        //        };
+
+        //        using (var process = Process.Start(startInfo))
+        //        {
+        //            process.OutputDataReceived += (s, e) =>
+        //            {
+        //                if (e.Data != null)
+        //                {
+        //                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                }
+        //            };
+
+        //            process.ErrorDataReceived += (s, e) =>
+        //            {
+        //                if (e.Data != null)
+        //                {
+        //                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                }
+        //            };
+
+        //            process.BeginOutputReadLine();
+        //            process.BeginErrorReadLine();
+
+        //            process.WaitForExit();
+        //        }
+
+        //        // Update the download count on the UI thread
+        //        Invoke((Action)(() =>
+        //        {
+        //            downloadCount++;
+        //            lblCount.Text = $"Downloaded: {downloadCount}/{videoUrls.Count}";
+        //        }));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Invoke(new Action(() => txtCmd.AppendText($"Error: {ex.Message}\n")));
+        //    }
+        //}
+
+        //private void DownloadVideo(string url, CancellationToken cancellationToken)
+        //{
+        //    try
+        //    {
+        //        // Create the output path where the video will be saved using the video title
+        //        // The '%(title)s' placeholder will be replaced with the video's title, and '%(ext)s' will get the correct file extension.
+        //        string savePath = Path.Combine(txtSaveTo.Text, "%(title)s.%(ext)s");
+
+        //        // Ensure yt-dlp path is quoted properly
+        //        string ytDlpCommand = $"\"{txtYtdlpExe.Text}\" -o \"{savePath}\" \"{url}\"";
+
+        //        // Check if yt-dlp exists
+        //        if (string.IsNullOrEmpty(txtYtdlpExe.Text) || !File.Exists(txtYtdlpExe.Text))
+        //        {
+        //            Invoke(new Action(() => txtCmd.AppendText("Error: yt-dlp.exe not found!\n")));
+        //            return;
+        //        }
+
+        //        // Ensure cmd.exe can execute it properly
+        //        var startInfo = new ProcessStartInfo
+        //        {
+        //            FileName = "cmd.exe",
+        //            Arguments = $"/c \"{ytDlpCommand}\"",  // Ensure proper quoting for the entire command
+        //            CreateNoWindow = true,
+        //            UseShellExecute = false,
+        //            RedirectStandardOutput = true,
+        //            RedirectStandardError = true
+        //        };
+
+        //        using (var process = Process.Start(startInfo))
+        //        {
+        //            process.OutputDataReceived += (s, e) =>
+        //            {
+        //                if (e.Data != null)
+        //                {
+        //                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                }
+        //            };
+
+        //            process.ErrorDataReceived += (s, e) =>
+        //            {
+        //                if (e.Data != null)
+        //                {
+        //                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                }
+        //            };
+
+        //            process.BeginOutputReadLine();
+        //            process.BeginErrorReadLine();
+
+        //            process.WaitForExit();
+        //        }
+
+        //        // After download completes, check if file needs conversion
+        //        string downloadedFile = GetDownloadedFile(savePath);
+        //        if (downloadedFile != null && Path.GetExtension(downloadedFile) != ".mp4")
+        //        {
+        //            // Convert the video to .mp4 using ffmpeg
+        //            string convertedFile = Path.Combine(Path.GetDirectoryName(downloadedFile), Path.GetFileNameWithoutExtension(downloadedFile) + ".mp4");
+        //            string ffmpegCommand = $"\"{txtFfmpegExe.Text}\" -i \"{downloadedFile}\" \"{convertedFile}\"";
+
+        //            // Run ffmpeg for conversion
+        //            var ffmpegStartInfo = new ProcessStartInfo
+        //            {
+        //                FileName = "cmd.exe",
+        //                Arguments = $"/c \"{ffmpegCommand}\"",  // Ensure proper quoting for the entire command
+        //                CreateNoWindow = true,
+        //                UseShellExecute = false,
+        //                RedirectStandardOutput = true,
+        //                RedirectStandardError = true
+        //            };
+
+        //            using (var ffmpegProcess = Process.Start(ffmpegStartInfo))
+        //            {
+        //                ffmpegProcess.OutputDataReceived += (s, e) =>
+        //                {
+        //                    if (e.Data != null)
+        //                    {
+        //                        Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                    }
+        //                };
+
+        //                ffmpegProcess.ErrorDataReceived += (s, e) =>
+        //                {
+        //                    if (e.Data != null)
+        //                    {
+        //                        Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+        //                    }
+        //                };
+
+        //                ffmpegProcess.BeginOutputReadLine();
+        //                ffmpegProcess.BeginErrorReadLine();
+
+        //                ffmpegProcess.WaitForExit();
+        //            }
+
+        //            // Rename the converted file to .pm4
+        //            string pm4File = Path.ChangeExtension(convertedFile, ".pm4");
+        //            if (File.Exists(convertedFile))
+        //            {
+        //                File.Move(convertedFile, pm4File);
+        //            }
+        //        }
+
+        //        // Update the download count on the UI thread
+        //        Invoke((Action)(() =>
+        //        {
+        //            downloadCount++;
+        //            lblCount.Text = $"Downloaded: {downloadCount}/{videoUrls.Count}";
+        //        }));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Invoke(new Action(() => txtCmd.AppendText($"Error: {ex.Message}\n")));
+        //    }
+        //}
+
+
+        //============================
+
         private void DownloadVideo(string url, CancellationToken cancellationToken)
         {
             try
             {
                 // Create the output path where the video will be saved using the video title
-                // The '%(title)s' placeholder will be replaced with the video's title, and '%(ext)s' will get the correct file extension.
                 string savePath = Path.Combine(txtSaveTo.Text, "%(title)s.%(ext)s");
 
                 // Ensure yt-dlp path is quoted properly
-                string ytDlpCommand = $"\"{txtYtdlpExe.Text}\" -o \"{savePath}\" \"{url}\"";
+                string ytDlpCommand = $"\"{txtYtdlpExe.Text}\" --merge-output-format mp4 -f bestvideo+bestaudio -o \"{savePath}\" \"{url}\"";
 
                 // Check if yt-dlp exists
                 if (string.IsNullOrEmpty(txtYtdlpExe.Text) || !File.Exists(txtYtdlpExe.Text))
@@ -510,6 +695,69 @@ namespace YouTubeDownloader
                     process.WaitForExit();
                 }
 
+                // After download completes, check if file needs conversion
+                string downloadedFile = GetDownloadedFile(savePath);
+                if (downloadedFile != null)
+                {
+                    string fileExtension = Path.GetExtension(downloadedFile).ToLower();
+
+                    // If the file is not .mp4, convert it to .mp4
+                    if (fileExtension != ".mp4")
+                    {
+                        string convertedFile = Path.Combine(Path.GetDirectoryName(downloadedFile), Path.GetFileNameWithoutExtension(downloadedFile) + ".mp4");
+
+                        // Convert using ffmpeg
+                        string ffmpegCommand = $"\"{txtFfmpegExe.Text}\" -i \"{downloadedFile}\" -c:v libx264 -c:a aac -strict experimental \"{convertedFile}\"";
+
+                        var ffmpegStartInfo = new ProcessStartInfo
+                        {
+                            FileName = "cmd.exe",
+                            Arguments = $"/c \"{ffmpegCommand}\"",  // Ensure proper quoting for the entire command
+                            CreateNoWindow = true,
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true
+                        };
+
+                        using (var ffmpegProcess = Process.Start(ffmpegStartInfo))
+                        {
+                            ffmpegProcess.OutputDataReceived += (s, e) =>
+                            {
+                                if (e.Data != null)
+                                {
+                                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+                                }
+                            };
+
+                            ffmpegProcess.ErrorDataReceived += (s, e) =>
+                            {
+                                if (e.Data != null)
+                                {
+                                    Invoke(new Action(() => txtCmd.AppendText(e.Data + Environment.NewLine)));
+                                }
+                            };
+
+                            ffmpegProcess.BeginOutputReadLine();
+                            ffmpegProcess.BeginErrorReadLine();
+
+                            ffmpegProcess.WaitForExit();
+                        }
+
+                        // Remove the original file (only if conversion was successful)
+                        if (File.Exists(convertedFile))
+                        {
+                            File.Delete(downloadedFile);  // Delete the original file after conversion
+                        }
+
+                        // Rename converted file to .pm4
+                        string pm4File = Path.ChangeExtension(convertedFile, ".pm4");
+                        if (File.Exists(convertedFile))
+                        {
+                            File.Move(convertedFile, pm4File);
+                        }
+                    }
+                }
+
                 // Update the download count on the UI thread
                 Invoke((Action)(() =>
                 {
@@ -522,6 +770,45 @@ namespace YouTubeDownloader
                 Invoke(new Action(() => txtCmd.AppendText($"Error: {ex.Message}\n")));
             }
         }
+
+        private string GetDownloadedFile(string savePath)
+        {
+            // Assuming only one file is downloaded, the output will be the first file
+            var files = Directory.GetFiles(Path.GetDirectoryName(savePath));
+            foreach (var file in files)
+            {
+                if (file.Contains(Path.GetFileNameWithoutExtension(savePath))) // Check if the file matches the downloaded video
+                {
+                    return file;
+                }
+            }
+            return null;
+        }
+
+
+
+
+        //==================================
+
+
+
+
+        //private string GetDownloadedFile(string savePath)
+        //{
+        //    // Assuming only one file is downloaded, the output will be the first file
+        //    var files = Directory.GetFiles(Path.GetDirectoryName(savePath));
+        //    foreach (var file in files)
+        //    {
+        //        if (file.Contains(Path.GetFileNameWithoutExtension(savePath))) // Check if the file matches the downloaded video
+        //        {
+        //            return file;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

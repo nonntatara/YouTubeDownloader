@@ -244,139 +244,153 @@ namespace YouTubeDownloader
 
         private void InitializeComponent()
         {
-            this.btnBrowseFile = new Button();
-            this.txtFilePath = new TextBox();
-            this.btnBrowseYtdlp = new Button();
-            this.txtYtdlpExe = new TextBox();
-            this.btnBrowseFfmpeg = new Button();
-            this.txtFfmpegExe = new TextBox();
-            this.btnSaveTo = new Button();
-            this.txtSaveTo = new TextBox();
-            this.btnStartDownload = new Button();
-            this.lblStatus = new Label();
-            this.lblCount = new Label();
-            this.txtCmd = new TextBox();
-            this.btnCancel = new Button();
-            this.SuspendLayout();
-
+            btnBrowseFile = new Button();
+            txtFilePath = new TextBox();
+            btnBrowseYtdlp = new Button();
+            txtYtdlpExe = new TextBox();
+            btnBrowseFfmpeg = new Button();
+            txtFfmpegExe = new TextBox();
+            btnSaveTo = new Button();
+            txtSaveTo = new TextBox();
+            btnStartDownload = new Button();
+            lblStatus = new Label();
+            lblCount = new Label();
+            txtCmd = new TextBox();
+            btnCancel = new Button();
+            SuspendLayout();
+            // 
             // btnBrowseFile
-            this.btnBrowseFile.Location = new System.Drawing.Point(12, 12);
-            this.btnBrowseFile.Name = "btnBrowseFile";
-            this.btnBrowseFile.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowseFile.TabIndex = 0;
-            this.btnBrowseFile.Text = "Browse File";
-            this.btnBrowseFile.UseVisualStyleBackColor = true;
-            this.btnBrowseFile.Click += new EventHandler(this.btnBrowseFile_Click);
-
+            // 
+            btnBrowseFile.Location = new Point(12, 12);
+            btnBrowseFile.Name = "btnBrowseFile";
+            btnBrowseFile.Size = new Size(110, 23);
+            btnBrowseFile.TabIndex = 0;
+            btnBrowseFile.Text = "Browse File";
+            btnBrowseFile.UseVisualStyleBackColor = true;
+            btnBrowseFile.Click += btnBrowseFile_Click;
+            // 
             // txtFilePath
-            this.txtFilePath.Location = new System.Drawing.Point(93, 12);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(270, 23);
-            this.txtFilePath.TabIndex = 1;
-
+            // 
+            txtFilePath.Location = new Point(128, 13);
+            txtFilePath.Name = "txtFilePath";
+            txtFilePath.Size = new Size(270, 23);
+            txtFilePath.TabIndex = 1;
+            // 
             // btnBrowseYtdlp
-            this.btnBrowseYtdlp.Location = new System.Drawing.Point(12, 50);
-            this.btnBrowseYtdlp.Name = "btnBrowseYtdlp";
-            this.btnBrowseYtdlp.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowseYtdlp.TabIndex = 2;
-            this.btnBrowseYtdlp.Text = "yt-dlp.exe";
-            this.btnBrowseYtdlp.UseVisualStyleBackColor = true;
-            this.btnBrowseYtdlp.Click += new EventHandler(this.btnBrowseYtdlp_Click);
-
+            // 
+            btnBrowseYtdlp.Location = new Point(12, 50);
+            btnBrowseYtdlp.Name = "btnBrowseYtdlp";
+            btnBrowseYtdlp.Size = new Size(110, 23);
+            btnBrowseYtdlp.TabIndex = 2;
+            btnBrowseYtdlp.Text = "yt-dlp.exe";
+            btnBrowseYtdlp.UseVisualStyleBackColor = true;
+            btnBrowseYtdlp.Click += btnBrowseYtdlp_Click;
+            // 
             // txtYtdlpExe
-            this.txtYtdlpExe.Location = new System.Drawing.Point(93, 50);
-            this.txtYtdlpExe.Name = "txtYtdlpExe";
-            this.txtYtdlpExe.Size = new System.Drawing.Size(270, 23);
-            this.txtYtdlpExe.TabIndex = 3;
-
+            // 
+            txtYtdlpExe.Location = new Point(128, 51);
+            txtYtdlpExe.Name = "txtYtdlpExe";
+            txtYtdlpExe.Size = new Size(270, 23);
+            txtYtdlpExe.TabIndex = 3;
+            // 
             // btnBrowseFfmpeg
-            this.btnBrowseFfmpeg.Location = new System.Drawing.Point(12, 90);
-            this.btnBrowseFfmpeg.Name = "btnBrowseFfmpeg";
-            this.btnBrowseFfmpeg.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowseFfmpeg.TabIndex = 4;
-            this.btnBrowseFfmpeg.Text = "ffmpeg.exe";
-            this.btnBrowseFfmpeg.UseVisualStyleBackColor = true;
-            this.btnBrowseFfmpeg.Click += new EventHandler(this.btnBrowseFfmpeg_Click);
-
+            // 
+            btnBrowseFfmpeg.Location = new Point(12, 90);
+            btnBrowseFfmpeg.Name = "btnBrowseFfmpeg";
+            btnBrowseFfmpeg.Size = new Size(110, 23);
+            btnBrowseFfmpeg.TabIndex = 4;
+            btnBrowseFfmpeg.Text = "ffmpeg.exe";
+            btnBrowseFfmpeg.UseVisualStyleBackColor = true;
+            btnBrowseFfmpeg.Click += btnBrowseFfmpeg_Click;
+            // 
             // txtFfmpegExe
-            this.txtFfmpegExe.Location = new System.Drawing.Point(93, 90);
-            this.txtFfmpegExe.Name = "txtFfmpegExe";
-            this.txtFfmpegExe.Size = new System.Drawing.Size(270, 23);
-            this.txtFfmpegExe.TabIndex = 5;
-
+            // 
+            txtFfmpegExe.Location = new Point(128, 91);
+            txtFfmpegExe.Name = "txtFfmpegExe";
+            txtFfmpegExe.Size = new Size(270, 23);
+            txtFfmpegExe.TabIndex = 5;
+            // 
             // btnSaveTo
-            this.btnSaveTo.Location = new System.Drawing.Point(12, 130);
-            this.btnSaveTo.Name = "btnSaveTo";
-            this.btnSaveTo.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveTo.TabIndex = 6;
-            this.btnSaveTo.Text = "Save To";
-            this.btnSaveTo.UseVisualStyleBackColor = true;
-            this.btnSaveTo.Click += new EventHandler(this.btnSaveTo_Click);
-
+            // 
+            btnSaveTo.Location = new Point(12, 130);
+            btnSaveTo.Name = "btnSaveTo";
+            btnSaveTo.Size = new Size(110, 23);
+            btnSaveTo.TabIndex = 6;
+            btnSaveTo.Text = "Save To";
+            btnSaveTo.UseVisualStyleBackColor = true;
+            btnSaveTo.Click += btnSaveTo_Click;
+            // 
             // txtSaveTo
-            this.txtSaveTo.Location = new System.Drawing.Point(93, 130);
-            this.txtSaveTo.Name = "txtSaveTo";
-            this.txtSaveTo.Size = new System.Drawing.Size(270, 23);
-            this.txtSaveTo.TabIndex = 7;
-
+            // 
+            txtSaveTo.Location = new Point(128, 131);
+            txtSaveTo.Name = "txtSaveTo";
+            txtSaveTo.Size = new Size(270, 23);
+            txtSaveTo.TabIndex = 7;
+            // 
             // btnStartDownload
-            this.btnStartDownload.Location = new System.Drawing.Point(12, 170);
-            this.btnStartDownload.Name = "btnStartDownload";
-            this.btnStartDownload.Size = new System.Drawing.Size(75, 23);
-            this.btnStartDownload.TabIndex = 8;
-            this.btnStartDownload.Text = "Start Download";
-            this.btnStartDownload.UseVisualStyleBackColor = true;
-            this.btnStartDownload.Click += new EventHandler(this.btnStartDownload_Click);
-
+            // 
+            btnStartDownload.Location = new Point(12, 170);
+            btnStartDownload.Name = "btnStartDownload";
+            btnStartDownload.Size = new Size(110, 23);
+            btnStartDownload.TabIndex = 8;
+            btnStartDownload.Text = "Start Download";
+            btnStartDownload.UseVisualStyleBackColor = true;
+            btnStartDownload.Click += btnStartDownload_Click;
+            // 
             // lblStatus
-            this.lblStatus.Location = new System.Drawing.Point(12, 210);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(360, 23);
-            this.lblStatus.TabIndex = 9;
-            this.lblStatus.Text = "Status: Waiting...";
-
+            // 
+            lblStatus.Location = new Point(12, 210);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(360, 23);
+            lblStatus.TabIndex = 9;
+            lblStatus.Text = "Status: Waiting...";
+            // 
             // lblCount
-            this.lblCount.Location = new System.Drawing.Point(12, 240);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(360, 23);
-            this.lblCount.TabIndex = 10;
-            this.lblCount.Text = "Downloaded: 0";
-
+            // 
+            lblCount.Location = new Point(12, 240);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(360, 23);
+            lblCount.TabIndex = 10;
+            lblCount.Text = "Downloaded: 0";
+            // 
             // txtCmd
-            this.txtCmd.Location = new System.Drawing.Point(12, 270);
-            this.txtCmd.Multiline = true;
-            this.txtCmd.Name = "txtCmd";
-            this.txtCmd.Size = new System.Drawing.Size(360, 150);
-            this.txtCmd.TabIndex = 11;
-
+            // 
+            txtCmd.Location = new Point(12, 270);
+            txtCmd.Multiline = true;
+            txtCmd.Name = "txtCmd";
+            txtCmd.Size = new Size(386, 150);
+            txtCmd.TabIndex = 11;
+            // 
             // btnCancel
-            this.btnCancel.Location = new System.Drawing.Point(12, 430);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
-
+            // 
+            btnCancel.Location = new Point(12, 430);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 12;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // Form1
-            this.ClientSize = new System.Drawing.Size(384, 461);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtCmd);
-            this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.btnStartDownload);
-            this.Controls.Add(this.txtSaveTo);
-            this.Controls.Add(this.btnSaveTo);
-            this.Controls.Add(this.txtFfmpegExe);
-            this.Controls.Add(this.btnBrowseFfmpeg);
-            this.Controls.Add(this.txtYtdlpExe);
-            this.Controls.Add(this.btnBrowseYtdlp);
-            this.Controls.Add(this.txtFilePath);
-            this.Controls.Add(this.btnBrowseFile);
-            this.Name = "Form1";
-            this.Text = "YouTube Downloader";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(416, 461);
+            Controls.Add(btnCancel);
+            Controls.Add(txtCmd);
+            Controls.Add(lblCount);
+            Controls.Add(lblStatus);
+            Controls.Add(btnStartDownload);
+            Controls.Add(txtSaveTo);
+            Controls.Add(btnSaveTo);
+            Controls.Add(txtFfmpegExe);
+            Controls.Add(btnBrowseFfmpeg);
+            Controls.Add(txtYtdlpExe);
+            Controls.Add(btnBrowseYtdlp);
+            Controls.Add(txtFilePath);
+            Controls.Add(btnBrowseFile);
+            Name = "Form1";
+            Text = "YouTube Downloader";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
